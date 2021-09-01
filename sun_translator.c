@@ -62,8 +62,20 @@ int main()
 
     fclose(fh);
 
+    /* SunSymbol *testpt = symbols;
+    printf("%s\n", (testpt+1)->word); */
     /* for(i = 0; i < total_symbols; i++)
         printf("%s = %s", symbols[i].word, symbols[i].symbol); */
+    
+
+    /* Translate English words */
+    /* char test_word[] = "awake";
+
+    for(i = 0; i < total_symbols; i++)
+    {
+        if(!strcmp(symbols[i].word, test_word))
+            printf("%s = %s\n",test_word, symbols[i].symbol);
+    } */
 
     return(0);
 }
