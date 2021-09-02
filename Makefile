@@ -1,10 +1,11 @@
 CC=gcc
-CFLAGS=-Wall
+CFLAGS=-g -Wall
+BIN=sun_translator
 
 
-all: sun_translator
+all:$(BIN)
 
-sun_translator: sun_translator.c
+sun_translator: src/sun_translator.c
 	$(CC) $(CFLAGS) -o $@ $^
 
 clean:

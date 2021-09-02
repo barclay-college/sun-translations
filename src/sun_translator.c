@@ -10,7 +10,7 @@ typedef struct SunSymbol {
 
 int main()
 {
-    const char filename[] = "sun_dictionary.csv";
+    const char filename[] = "content/sun_dictionary.csv";
     FILE *fh;
 
     fh = fopen(filename,"r");
