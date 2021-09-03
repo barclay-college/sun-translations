@@ -2,13 +2,15 @@
 #include<string.h>
 
 
+#define TOTAL_SYMBOLS 3305
+
 typedef struct SunSymbol {
     char word[30];
     char symbol[30];
 } SunSymbol;
 
 
-int main()
+int main(int argc, char **argv)
 {
     const char filename[] = "content/sun_dictionary.csv";
     FILE *fh;
@@ -34,7 +36,7 @@ int main()
     rewind(fh);
 
     /* Read in english/symbol translations */
-    SunSymbol symbols[total_symbols];
+    SunSymbol symbols[TOTAL_SYMBOLS];
     int i = 0;
 
     char buffer[200];
@@ -76,6 +78,21 @@ int main()
         if(!strcmp(symbols[i].word, test_word))
             printf("%s = %s\n",test_word, symbols[i].symbol);
     } */
+
+    for (int a=0; a < argc; a++)
+    {
+        for(i=0; i < TOTAL_SYMBOLS; i++)
+        {
+            /* Check for \n in symbols[i].symbol */
+            if(!strcmp(symbols[i].word, argv[a]))
+            {
+                printf("%s ", symbols[i].symbol);
+                break;
+            }
+        }
+    }
+
+    printf("\n");
 
     return(0);
 }
